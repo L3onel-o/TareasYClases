@@ -1,30 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
     int edad; 
     int *puntero = &edad;
     cout << "Ingrese su edad: ";
     cin >> *puntero;
 
-    if (edad >= 18)
+    if (*puntero >= 18)
     {
-        cout << "Usted es mayor de edad: " << edad << "\n";
+        cout << "Usted es mayor de edad: " << *puntero;
     }
-    else if (edad < 0)
+    else if (*puntero < 0)
     {
         cout << "La edad ingresada es invalida";
     }
     
     else
     {
-        cout << "Usted es menor de edad: " << edad;
+        cout << "Usted es menor de edad: " << *puntero;
     }
     
+    cout << "\nEl espacio de memoria es: " << &puntero;
 
     delete[] puntero;
     puntero = NULL;
 
-    cout << " \nEl espacio de memoria es: " << &puntero << "\n";
+    return 0;
 }
